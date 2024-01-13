@@ -12,8 +12,13 @@ export async function POST(request: NextRequest) {
         const email = req.email;
         const db = await connectToDb();
         const secretToken:any = await getJwtToken(db, email);
-        const decoded = await jwt.verify(tokenClient, secretToken.secretKey);  
-        return NextResponse.json({ db: decoded, status:200 });
+        if (secretToken!=="error"){
+            const decoded = await jwt.verify(tokenClient, secretToken.secretKey);  
+            return NextResponse.json({ db: decoded, status:200 });
+        }else{
+            return NextResponse.json({ message: "unauthorised", status: 401 });
+        }
+        
         
     } catch (error) {
         console.log("error",error);
