@@ -11,11 +11,6 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  //check to see if organisation is set up
-  //if not redirect to organisation set up
-  //if it is then redirect to login
-  //if user has logged in false then redirect to set new password screen
-  //if they have allow access
   try {
     const response: any = await fetch(
       `${request.nextUrl.origin}/api/checkOrgTable`

@@ -28,9 +28,10 @@ const checkOrganisationTableExists = () => {
         db.get(query, (err, row) => {
           if (err) {
             console.error(err.message);
-            reject(err);
+            reject(false);
           } else {
             if (row) {
+              //console.log(row)
               resolve(true); // Table exists
             } else {
               resolve(false); // Table does not exist

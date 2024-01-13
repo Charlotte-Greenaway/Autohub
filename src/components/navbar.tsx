@@ -13,7 +13,11 @@ const AnimatedCarNavbar = () => {
 
   const getUserAccess = async () => {
     const response = await axios.post("/api/getUserAccess");
-    if(window.location.pathname!=="/log-in" && window.location.pathname!=="/organisation-signup"){
+    const orgExists: any = await axios.get(
+      `/api/checkOrgTable`
+    );
+    if(window.location.pathname!=="/log-in" && orgExists.data.exists && window.location.pathname!=="/organisation-signup"){
+      console.log("this issue");
       if (response.data.status !== 200) {
         await setUserAccess("read_only");
         toast.error("Could not retirieve permission level");

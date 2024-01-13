@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 import Context  from "@/contexts/userAccessContext";
 
 export const metadata: Metadata = {
-  title: "Car Casts",
+  title: "Autohub",
   description: "Dealer management system",
 };
 

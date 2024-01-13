@@ -59,14 +59,7 @@ const createCarsTable = (dbPath: any) => {
             actual_hours TEXT
         );
     `;
-        const query4 = `
-        CREATE TABLE IF NOT EXISTS organisation (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            org_name TEXT,
-            org_number TEXT,
-            org_address TEXT
-        );
-    `; // Your SQL query
+
     const query3 = `
         CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -102,14 +95,7 @@ const createCarsTable = (dbPath: any) => {
                     console.error(err.message);
                     reject(err);
                   } else {
-                    db.run(query4, (err) => {
-                      if (err) {
-                        console.error(err.message);
-                        reject(err);
-                      } else {
-                        resolve(db);
-                      }
-                    });
+                    
                     resolve(db);
                   }
                 });
