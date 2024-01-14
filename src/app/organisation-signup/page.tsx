@@ -83,7 +83,7 @@ const OrgSignUp = () => {
 
   return (
     <>
-      <h1 className="text-2xl text-center">Create Organisation</h1>
+      <h1 className="text-2xl text-center my-4">Create Organisation</h1>
       <form className="w-full md:w-3/4 mx-auto my-3">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2 my-2">
           <div>
@@ -182,7 +182,7 @@ const OrgSignUp = () => {
                 <strong>Password:</strong>
               </label>
               <input
-                type="text"
+                type="password"
                 placeholder="SetUpPassword1"
                 className="w-full p-2 border border-gray-300 rounded-md"
                 id="password"
